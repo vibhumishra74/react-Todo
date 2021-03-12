@@ -35,31 +35,34 @@ function App() {
   };
   return (
     <div className="App">
-      <h1>Hello Add your Todo items here</h1>
-      <form>
-        <FormControl>
-          <InputLabel htmlFor="Write your Todos">Write your Todos</InputLabel>
-          <Input
-            value={input}
-            onChange={(event) => handleChange(event)}
-            placeholder="Enter your text"
-          />
-        </FormControl>
-        <Button
-          type="submit"
-          onClick={AddTodo}
-          variant="contained"
-          color="primary"
-          disabled={!input}
-        >
-          Add Todo
-        </Button>
-      </form>
-      <ul>
-        {Todos.map((todo) => (
-          <Todo id={todo.id} key={todo.id} text={todo.todo} />
-        ))}
-      </ul>
+      <div className="app">
+        <h1>Hello Add your Todo items here</h1>
+        <form>
+          <FormControl className="white">
+            <InputLabel htmlFor="Write your Todos">Write your Todos</InputLabel>
+            <Input
+              className="white"
+              value={input}
+              onChange={(event) => handleChange(event)}
+              placeholder="Enter your text"
+            />
+          </FormControl>
+          <Button
+            type="submit"
+            onClick={AddTodo}
+            variant="contained"
+            color="primary"
+            disabled={!input}
+          >
+            Add Todo
+          </Button>
+        </form>
+        <ul className="white">
+          {Todos.map((todo) => (
+            <Todo id={todo.id} key={todo.id} text={todo.todo} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
